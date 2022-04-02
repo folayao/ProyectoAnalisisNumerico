@@ -34,5 +34,5 @@ def biseccion(xi, f, xf, tol, tError):
     
 
 funcion = lambda x: x**3 - 7.51*x**2 + 18.4239*x - 14.8331
-funcion = lambda x: math.exp(3*x - 12) + x*math.cos(3*x) - x**2 + 4
-biseccion(2, funcion, 3  , 0.0005, 0 )
+#funcion = lambda x: math.exp(3*x - 12) + x*math.cos(3*x) - x**2 + 4
+biseccion(3, funcion, 3.5  , 0.00005, 1)

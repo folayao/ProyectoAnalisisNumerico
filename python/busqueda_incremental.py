@@ -23,5 +23,6 @@ def busqueda_incremental(funcion, xi, maxIter, deltaX):
 funcion = lambda x: 90*(x+40)*(x+27)*(x+95) - 50000000
 # funcion = lambda x: math.exp(3*x - 12) + x*math.cos(3*x) - x**2 + 4
 # busqueda_incremental(funcion, -3, 1000, 1)        
-f = lambda x: math.exp(-x) - (x**2)*math.cos(2*x-4) + 6*x + 3
-busqueda_incremental(f, -1, 1000, 0.1)
+# f = lambda x: math.exp(-x) - (x**2)*math.cos(2*x-4) + 6*x + 3
+f = lambda x: x**3 - 7.51*x**2 + 18.4239*x - 14.8331
+busqueda_incremental(f, 2.12, 1000, 0.01)
