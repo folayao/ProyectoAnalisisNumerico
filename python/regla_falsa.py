@@ -1,9 +1,14 @@
+from tabulate import tabulate
+
+
 def interceptoX(xi, xf, yi, yf):
     m = (yf - yi) / (xf - xi)
     #return (m*xi - f(xi))/m
     return xi - yi/m
 
 def regla_falsa(xi, f, xf, tol, tError):
+    headers=["ite","xi","f(xi)","xm","f(xm)","xf","f(xf)","Error"]
+    table=[]
     ite = 0
     if f(xi)*f(xf) ==  0:
         if f(xi) == 0:
@@ -16,7 +21,8 @@ def regla_falsa(xi, f, xf, tol, tError):
         xm = interceptoX(xi, xf, f(xi), f(xf))
         error  = tol + 1
         ite = 0
-        
+        table.append([ite,xi, f(xi), xm, f(xm), xf, f(xf), format(error, ".1E")])
+
         while (error >= tol and f(xm) != 0):
             if f(xi)*f(xm) < 0:
                 xf = xm
@@ -29,7 +35,9 @@ def regla_falsa(xi, f, xf, tol, tError):
             else:
                 error = abs((xm - xi)/xm)
             ite += 1
-    
+            table.append([ite,xi, f(xi), xm, f(xm), xf, f(xf), format(error, ".1E")])
+
+        print(tabulate(table, headers))
         if f(xm) == 0:
             print(f'El valor {xm} es raiz en la iteracion {ite}')
         else: 

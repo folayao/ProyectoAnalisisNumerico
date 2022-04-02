@@ -1,6 +1,9 @@
 import math
+from tabulate import tabulate
 
-def biseccion(xi, f, xf, tol, tError):
+def biseccion(f, xi, xf, tol, tError):
+    headers=["ite","xi","f(xi)","xm","f(xm)","xf","f(xf)","Error"]
+    table=[]
     ite = 0
     if f(xi)*f(xf) ==  0:
         if f(xi) == 0:
@@ -13,7 +16,8 @@ def biseccion(xi, f, xf, tol, tError):
         xm = (xi + xf)/2
         error  = tol + 1
         ite = 0
-        
+        table.append([ite,xi, f(xi), xm, f(xm), xf, f(xf), format(error, ".1E")])
+
         while (error >= tol and f(xm) != 0):
             if f(xi)*f(xm) < 0:
                 xf = xm
@@ -26,7 +30,9 @@ def biseccion(xi, f, xf, tol, tError):
             else:
                 error = abs((xm - xi)/xm)
             ite += 1
-    
+            table.append([ite,xi, f(xi), xm, f(xm), xf, f(xf), format(error, ".1E")])
+
+        print(tabulate(table, headers))
         if f(xm) == 0:
             print(f'El valor {xm} es raiz en la iteracion {ite}')
         else: 
@@ -35,4 +41,4 @@ def biseccion(xi, f, xf, tol, tError):
 
 funcion = lambda x: x**3 - 7.51*x**2 + 18.4239*x - 14.8331
 #funcion = lambda x: math.exp(3*x - 12) + x*math.cos(3*x) - x**2 + 4
-biseccion(3, funcion, 3.5  , 0.00005, 1)
+biseccion(funcion, 3, 3.5, 0.00005, 1)

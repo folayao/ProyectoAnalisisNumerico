@@ -1,15 +1,23 @@
 import math
+from tabulate import tabulate
 
 def busqueda_incremental(funcion, xi, maxIter, deltaX):
+    headers=["ite","x","f(x)"]
+    table=[]
     if funcion(xi) == 0:
         print(f'{xi} es raiz')
     else: 
         xf = xi + deltaX
         ite = 0
+        table.append([ite, xi, funcion(xi)])
         while(funcion(xi)*funcion(xf) > 0 and ite < maxIter):
             xi = xf
             xf = xi + deltaX
             ite += 1
+            table.append([ite, xi, funcion(xi)])
+        ite += 1
+        table.append([ite, xf, funcion(xf)])
+        print(tabulate(table, headers))
         if funcion(xi)*funcion(xf) == 0:
             print(f'{xf} es raiz')
             print(f'La iteración final fue {ite}')
@@ -25,4 +33,4 @@ funcion = lambda x: 90*(x+40)*(x+27)*(x+95) - 50000000
 # busqueda_incremental(funcion, -3, 1000, 1)        
 # f = lambda x: math.exp(-x) - (x**2)*math.cos(2*x-4) + 6*x + 3
 f = lambda x: x**3 - 7.51*x**2 + 18.4239*x - 14.8331
-busqueda_incremental(f, 2.12, 1000, 0.01)
+busqueda_incremental(funcion, 0, 1000, 1)
