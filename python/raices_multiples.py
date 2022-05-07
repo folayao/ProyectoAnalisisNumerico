@@ -37,4 +37,7 @@ f = lambda x: x*math.exp(x) - math.exp(x) + 1
 fi = lambda x: x*math.exp(x)
 fii = lambda x: x*math.exp(x) + math.exp(x)
 
-raices_multiples(f, 0.5, 0.0000005, fi, fii, 1000, 0)
+f = lambda x: x**3 - x**2 - 2*x + 2 + math.sin(x-1)
+fi = lambda x: 3*x**2 - 2*x - 2 + math.cos(x-1)
+fii = lambda x: 6*x - 2 - math.sin(x-1)
+raices_multiples(f, 0.5, 0.005, fi, fii, 1000, 1)

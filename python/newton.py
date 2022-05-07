@@ -31,4 +31,6 @@ def newton(f, xi, tol,fi, maxIter, tError):
 f = lambda x: math.exp(-x) - (x**2)*math.cos(2*x-4) + 6*x + 3
 fi = lambda x: -math.exp(-x) - 2*x*math.cos(2*x-4) - 2*(x**2)*math.sin(2*x-4) + 6
 
-newton(f, 0, 0.00005, fi, 10000, 0)
+f = lambda x: x - (3*x)/math.sqrt( x**2 + 9) - 175/1000
+fi = lambda x: 1 - 27/( x**2 + 9)**(3/2)
+newton(f, 1, 0.00005, fi, 10000, 0)

@@ -40,5 +40,6 @@ def secante(f, x0, x1, tol, maxIter, tError):
 # fi = lambda x: -math.exp(-x) - 1
 f = lambda x: math.exp(-x) - (x**2)*math.cos(2*x-4) + 6*x + 3
 f = lambda x: math.exp(-x) - x
-
-secante(f, 1, 0, 0.000000005, 100, 0)
+f = lambda x: x**3 - x**2 - 2*x + 2 + math.sin(x-1)
+f = lambda x: x - (3*x)/math.sqrt( x**2 + 9) - 10000/1000
+secante(f, 1, 2, 0.00005, 100, 0)

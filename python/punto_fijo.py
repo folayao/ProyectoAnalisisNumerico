@@ -27,7 +27,12 @@ def punto_fijo(f, xi, tol, g, maxIter, tError):
         else:
             print('No llegamos')
 
-f = lambda x: math.exp(-x) - x
-g = lambda x: math.exp(-x)
+# f = lambda x: math.exp(-x) - x
+# g = lambda x: math.exp(-x)
 
-punto_fijo(f, 0.5, 0.00005, g, 50, 0)
+# punto_fijo(f, 0.5, 0.00005, g, 50, 0)
+
+f = lambda x: 1/x + 0.4 - 1.74*math.log(50*(x**(1/2)))
+g = lambda x: 1/(-0.4 + 1.74*math.log(50*(x**(1/2))))
+
+punto_fijo(f, 0.5, 0.005, g, 100, 1)
