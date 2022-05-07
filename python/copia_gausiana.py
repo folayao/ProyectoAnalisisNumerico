@@ -10,8 +10,8 @@ def eliminacion_gausiana(A,b, n):
         Ab = A
     
     #Eliminacion Gausiana
-    for k in range(0, n): #Array de pivotes
-        for i in range(k+1, n): #Hallar multiplicador, vuelve cero Ab[i][k]
+    for k in range(0, n-1): #Array de pivotes
+        for i in range(k+1, n-1): #Hallar multiplicador, vuelve cero Ab[i][k]
             M = Ab[i][k]/Ab[k][k]
             Ab[i][k] = 0
             
