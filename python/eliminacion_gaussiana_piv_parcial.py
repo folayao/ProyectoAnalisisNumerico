@@ -44,13 +44,19 @@ def eliminacion_gausiana_piv_parcial(A,b, n):
         print('x' + str(i) + '=' + str(x[i]))
         
 
-A = [[-7, 2, -3, 4],
-     [5, -1, 14, -1],
-     [1, 9, -7, 5],
-     [-12, 13, -8, -4],]
+# A = [[-7, 2, -3, 4],
+#      [5, -1, 14, -1],
+#      [1, 9, -7, 5],
+#      [-12, 13, -8, -4],]
   
-b = [-12, 13, 31, -32]
+# b = [-12, 13, 31, -32]
 
+A = [[4, 3, -2, -7],
+     [3, 12, 8, -3],
+     [2, 3, -9, 3],
+     [1, -2, -5, -6],]
+  
+b = [20, 18, 31, 12]
 eliminacion_gausiana_piv_parcial(A, b, 4)
 # mayor, fila2 = pivoteo_parcial(A, 4, 0)
 # nuevo = cambio_fila(A, 0, 3)

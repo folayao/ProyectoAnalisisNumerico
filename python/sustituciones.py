@@ -5,7 +5,7 @@ def sustitucion_progresiva(L, n, b):
         sum = 0
         for j in range(k):
             sum += L[k][j]*z[j]
-        z.append(b[k] - sum)
+        z.append((b[k] - sum)/L[k][k])
     return z
 
 
