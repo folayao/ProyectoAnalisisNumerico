@@ -39,7 +39,7 @@ def biseccion(f, xi, xf, tol, tError):
             print(f"El valor {xm} es raiz con tolerancia {format(tol, '.1E')} en la iteracion {ite}")
     
 
-funcion = lambda x: x**3 - 7.51*x**2 + 18.4239*x - 14.8331
+#funcion = lambda x: x**3 - 7.51*x**2 + 18.4239*x - 14.8331
 #funcion = lambda x: math.exp(3*x - 12) + x*math.cos(3*x) - x**2 + 4
 #biseccion(funcion, 3, 3.5, 0.00005, 1)
 # f = lambda x: x**3 - x**2 + 2*x + 2 + math.sin(x-1)

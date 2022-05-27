@@ -1,4 +1,5 @@
 
+#Identidad
 def eye(n):
     x = []
     for i in range(n):
@@ -10,7 +11,8 @@ def eye(n):
                 filai.append(0) 
         x.append(filai)
     return x
-
+    
+#Matriz de ceros
 def zero(n):
     x = []
     for i in range(n):
