@@ -61,13 +61,6 @@ def factorizar(A):
                 U[i][j] = -A[i][j]
 
     return D, L, U
-A = [[4, 3, -2, -7],
-     [3, 12, 8, -3],
-     [2, 3, -9, 3],
-     [1, -2, -5, 6],]
-
-D,L, U = factorizar(A) 
-print(D ,'\n',L,'\n',U,'\n') 
 
 def inversa_D(D):
     n = len(D)
@@ -89,12 +82,22 @@ def resta_vectores(a, b):
         y.append(a[i] - b[i])
     return y
 
+#Suma de matrices
 def suma_matrices(A, B):
     n = len(A)
     Y = zero(n)
     for i in range(n):
         for j in range(n):
             Y[i][j] = A[i][j] + B[i][j]
+    return Y
+    
+#Resta matrices
+def resta_matrices(A, B):
+    n = len(A)
+    Y = zero(n)
+    for i in range(n):
+        for j in range(n):
+            Y[i][j] = A[i][j] - B[i][j]
     return Y
 
 
@@ -121,11 +124,11 @@ def norma(a):
     total = math.sqrt(total) 
     return total  
 
-# res = dot(A[0], 1,2,columna(A, 0), 0, 1)
-# print(f'res: {res}')
-# A = [[1,2,3],[4,5,6],[7,8,9]]
-# B = [[9,8,7],[6,5,4],[3,2,1]]
-# b = [1,2,3]
-b = [20, 18, 31, 12]
-
-# print(prod_matrices(A,b))
+def ampliar(A,b):
+    Ab=[]
+    n = len(A)
+    #Matriz ampliada
+    for i in range(n):
+        A[i].append(b[i])
+    Ab = A
+    return Ab
