@@ -45,4 +45,4 @@ def biseccion(f, xi, xf, tol, tError):
 # f = lambda x: x**3 - x**2 + 2*x + 2 + math.sin(x-1)
 # biseccion(f, -1, -1.5, 0.00005, 0)
 f = lambda x: math.exp(x + 3) + (x**3)/3 - 10
-biseccion(f, -1, 0, 10**-8, 0)
+biseccion(f, -1, 0, 0.0005, 0)

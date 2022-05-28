@@ -1,15 +1,20 @@
-from auxiliar import factorizar, inversa_D
+import numpy as np
+from auxiliar import factorizar, inversa_D, resta_matrices
 from auxiliar import prod_matrices, prod_matriz_vector, resta_vectores, suma_matrices, suma_vectores, norma
 
 
-def jacobi(A, b, x, iter, tol):
+def gseidel(A, b, x, iter, tol):
     D, L, U = factorizar(A)
     cont = 0
     error = tol + 1
-    # D^-1(L+U)x + D^-1b
-    Di = inversa_D(D)
-    T = prod_matrices(Di, suma_matrices(L,U))
-    C = prod_matriz_vector(Di, b)
+    #inv(D-L)
+    DL = resta_matrices(D,L)
+    DL = np.array(DL)
+    DLi = np.linalg.inv(DL)
+    #T=inv(D-L)*U
+    T = prod_matrices(DLi, U) 
+    #C=inv(D-L)*b
+    C = prod_matriz_vector(DLi, b)
     x_ant = x
     while error > tol and cont < iter:
         x = suma_vectores(prod_matriz_vector(T, x), C)
@@ -29,4 +34,4 @@ A = [[4, 3, -2, -7],
   
 b = [20, 18, 31, 12]
 
-jacobi(A, b, [2,2,2,2], 10000, 0.0005)
+gseidel(A, b, [2,2,2,2], 20, 0.0005)

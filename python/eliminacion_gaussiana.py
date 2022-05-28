@@ -29,11 +29,6 @@ def eliminacion_gausiana(A,b, n):
         print('x' + str(i) + '=' + str(x[i]))
         
 
-A = [[-7, 2, -3, 4],
-     [5, -1, 14, -1],
-     [1, 9, -7, 5],
-     [-12, 13, -8, -4],]
-  
-b = [-12, 13, 31, -32]
 
-eliminacion_gausiana(A, b, 4)
+
+# eliminacion_gausiana(A, b, 4)
