@@ -18,7 +18,6 @@ def sustitucion_progresiva(L, n, b):
 # z = sustitucion_progresiva(L, 4, b)
 # print(z)
 
-
 def sustitucion_regresiva(U,z):
    #Sustitución regresiva
     n = len(U)

@@ -1,5 +1,5 @@
 import numpy as np
-from auxiliar import factorizar, inversa_D, resta_matrices
+from auxiliar import factorizar, resta_matrices
 from auxiliar import prod_matrices, prod_matriz_vector, resta_vectores, suma_matrices, suma_vectores, norma
 
 

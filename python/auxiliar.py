@@ -24,7 +24,7 @@ def zero(n):
     return x
 
 #Producto punto de filas
-def dot(x, xi, xf, y, yi, yf):
+def dotm(x, xi, xf, y, yi, yf):
     sum = 0
     dif = xi - yi
     for i in range(xi, xf+1):
