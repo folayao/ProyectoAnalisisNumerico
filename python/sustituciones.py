@@ -18,17 +18,6 @@ b = [20, 18, 31, 12]
 z = sustitucion_progresiva(L, 4, b)
 print(z)
 
-
-def sustitucion_regresiva(Ab,x,n):
-   #Sustitución regresiva
-    for k in range(n, 0, -1):
-        sum = 0
-        for j in range(k, n):
-            sum += Ab[k-1][j]*x[j]
-        x[k-1] = (Ab[k-1][n] - sum)/Ab[k-1][k-1]
-    for i in range(n):
-        print('x' + str(i) + '=' + str(x[i]))
-
 def sustitucion_regresiva(U,z):
    #Sustitución regresiva
     n = len(U)

@@ -1,6 +1,6 @@
 
 
-from auxiliar import dot,columna, zero, eye
+from auxiliar import dotm,columna, zero, eye
 from sustituciones import sustitucion_progresiva, sustitucion_regresiva
 
 def doolittle(A,b):
@@ -13,12 +13,12 @@ def doolittle(A,b):
     for i in range(n-1):
         #Encontramos la fila U con la L que ya existe
         for j in range(i,n):
-            U[i][j] = (A[i][j] - dot(L[i],0,i-1,columna(U,j), 0, i-1))        
+            U[i][j] = (A[i][j] - dotm(L[i],0,i-1,columna(U,j), 0, i-1))        
         #Encontramos la fila U con la L que ya existe
         for j in range(i+1,n):
-            L[j][i] = (A[j][i] - dot(L[j],0,i-1,columna(U,i),0,i-1) )/ U[i][i]
+            L[j][i] = (A[j][i] - dotm(L[j],0,i-1,columna(U,i),0,i-1) )/ U[i][i]
     print(f'L: \n {L}\nU: \n {U}')
-    U[n-1][n-1] = A[n-1][n-1] - dot(L[n-1],0,n-1,columna(U,n-1),0,n-1)
+    U[n-1][n-1] = A[n-1][n-1] - dotm(L[n-1],0,n-1,columna(U,n-1),0,n-1)
 
     z = sustitucion_progresiva(L,n,b) 
     x = sustitucion_regresiva(U,z) 

@@ -63,6 +63,12 @@ A = [[4, 3, -2, -7],
   
 b = [20, 18, 31, 12]
 
+A = [[4,-1,0,3],
+     [1,15.5,3,8],
+     [0,-1.3,-4,1.1],
+     [14,5,-2,30],]
+     
+b = [1,1,1,1]
 factorizacion_LU(A, b, 4)
 # mayor, fila2 = pivoteo_parcial(A, 4, 0)
 # nuevo = cambio_fila(A, 0, 3)
