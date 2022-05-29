@@ -31,7 +31,7 @@ def dot(x, xi, xf, y, yi, yf):
         sum += x[i]*y[i-dif]
     return sum
 
-def dot(x, y):
+def dotM(x, y):
     n = len(x)
     sum = 0
     for i in range(n):
@@ -100,7 +100,7 @@ def resta_matrices(A, B):
             Y[i][j] = A[i][j] - B[i][j]
     return Y
 
-
+#Producto de matrices
 def prod_matrices(A, B):
     n = len(A)
     Y = zero(n)

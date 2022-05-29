@@ -9,25 +9,15 @@ def sustitucion_progresiva(L, n, b):
     return z
 
 
-L = [[1, 0, 0, 0],
-     [0.75, 1, 0, 0],
-     [0.5, 0.15, 1, 0],
-     [0.25, -0.28, 0.19, 1],]
+# L = [[1, 0, 0, 0],
+#      [0.75, 1, 0, 0],
+#      [0.5, 0.15, 1, 0],
+#      [0.25, -0.28, 0.19, 1],]
 
-b = [20, 18, 31, 12]
-z = sustitucion_progresiva(L, 4, b)
-print(z)
+# b = [20, 18, 31, 12]
+# z = sustitucion_progresiva(L, 4, b)
+# print(z)
 
-
-def sustitucion_regresiva(Ab,x,n):
-   #Sustitución regresiva
-    for k in range(n, 0, -1):
-        sum = 0
-        for j in range(k, n):
-            sum += Ab[k-1][j]*x[j]
-        x[k-1] = (Ab[k-1][n] - sum)/Ab[k-1][k-1]
-    for i in range(n):
-        print('x' + str(i) + '=' + str(x[i]))
 
 def sustitucion_regresiva(U,z):
    #Sustitución regresiva
@@ -42,3 +32,6 @@ def sustitucion_regresiva(U,z):
             sum += U[k-1][j]*x[j]
         x[k-1] = (U[k-1][n] - sum)/U[k-1][k-1]
     return x
+
+# result = sustitucion_regresiva(U,b)
+# print(result)
